@@ -3,6 +3,7 @@ import Stories from '../cmponents/Stories'
 import BasicProfile from '../cmponents/BasicProfile'
 import Suggestions from '../cmponents/Suggestions'
 import Footer from '../cmponents/Footer'
+import Post from '../cmponents/Post'
 
 const Home = () => {
     return (
@@ -11,6 +12,10 @@ const Home = () => {
                 <div className="grid grid-cols-3">
                     <div className="md:px-12 lg:px-0 col-span-3 lg:col-span-2">
                         <Stories />
+                        <Post/>
+                        <Post/>
+                        <Post/>
+                        <Post/>
                     </div>
                     <div className="col-span-1 hidden lg:block">
                         <div className="fixed p-5 w-80">
