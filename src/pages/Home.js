@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Stories from '../cmponents/Stories'
 import BasicProfile from '../cmponents/BasicProfile'
 import Suggestions from '../cmponents/Suggestions'
+import Footer from '../cmponents/Footer'
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                         <div className="fixed p-5 w-80">
                             <BasicProfile />
                             <Suggestions/>
+                            <Footer/>
                         </div>
                     </div>
                 </div>
