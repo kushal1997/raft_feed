@@ -11,7 +11,9 @@ const Home = () => {
                         <Stories />
                     </div>
                     <div className="col-span-1 hidden lg:block">
-                        <BasicProfile/>
+                        <div className="fixed p-5 w-80">
+                            <BasicProfile />
+                        </div>
                     </div>
                 </div>
             </div>
