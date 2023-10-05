@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Stories from '../cmponents/Stories'
 import BasicProfile from '../cmponents/BasicProfile'
+import Suggestions from '../cmponents/Suggestions'
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                     <div className="col-span-1 hidden lg:block">
                         <div className="fixed p-5 w-80">
                             <BasicProfile />
+                            <Suggestions/>
                         </div>
                     </div>
                 </div>
