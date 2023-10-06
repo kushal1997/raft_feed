@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react'
 import logo from "../assets/images/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
+import { Menu, Transition } from '@headlessui/react'
+export const classNames=(...classes)=>{
+    return classes.filter(Boolean).join(' ');
+}
 const Navbar = () => {
     return (
         <Fragment>
@@ -8,8 +13,10 @@ const Navbar = () => {
                 <div className="container max-w-5xl">
                     <div className="flex flex-row py-1 items-center">
                         <div className=" basis-1/2 md:basis-1/3 flex flex-row justify-center items-center">
-                            <img width={50} height={50} src={logo} alt="logo" />
-                            <p>Raft Labs</p>
+                            <Link to='/'>
+                                <img width={50} height={50} src={logo} alt="logo" />
+                                <p>Raft Labs</p>
+                            </Link>
                         </div>
                         <div className="basis-1/3 hidden md:block">
                             <div className="relative">
@@ -25,9 +32,9 @@ const Navbar = () => {
                         <div className="basis-1/2 md:basis-1/3">
                             <ul className="flex flex-row space-x-4 p-2 text-2xl justify-end items-center">
                                 <li>
-                                    <a href="" className="cursor-pointer">
+                                    <Link to='/'>
                                         <FontAwesomeIcon icon={'house'} />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="" className="cursor-pointer">
@@ -50,12 +57,104 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" className="cursor-pointer">
-                                        <img
-                                        className=' rounded-full w-6 w-ful'
-                                            src="https://user-images.githubusercontent.com/522079/90506845-e8420580-e122-11ea-82ca-31087fc8486c.png"
-                                            alt="" />
-                                    </a>
+                                    <Menu as="div" className="relative inline-block text-left">
+                                        <Menu.Button className='inline-block w-8 h-8 justify-center bg-white text-sm font-medium text-gray-700'>
+                                            <img
+                                                className=' rounded-full w-6 w-ful'
+                                                src="https://user-images.githubusercontent.com/522079/90506845-e8420580-e122-11ea-82ca-31087fc8486c.png"
+                                                alt="" />
+                                        </Menu.Button>
+                                        <Transition
+                                            as={Fragment}
+                                            enter="transition ease-out duration-100"
+                                            enterFrom="transform opacity-0 scale-95"
+                                            enterTo="transform opacity-100 scale-100"
+                                            leave="transition ease-in duration-75"
+                                            leaveFrom="transform opacity-100 scale-100"
+                                            leaveTo="transform opacity-0 scale-95"
+                                        >
+
+                                            <Menu.Items className='absolute origin-top-right right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none divide-y divide-gray-100'>
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link 
+                                                        to='/gigo6969'
+                                                        className={
+                                                            `${
+                                                                classNames(active
+                                                                ? 'bg-gray-100 text-gray-900 '
+                                                                : 'text-gray-700'
+                                                                ,'block px-4 py-2 text-sm text-gray-700')
+                                                            }`
+                                                        }
+                                                        >
+                                                            <FontAwesomeIcon icon={"user"} className='mr-2' />Profile
+                                                        </Link>
+                                                    )}
+
+                                                </Menu.Item>
+
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link 
+                                                        to='/gigo6969'
+                                                        className={
+                                                            `${
+                                                                classNames(active
+                                                                ? 'bg-gray-100 text-gray-900 '
+                                                                : 'text-gray-700'
+                                                                ,'block px-4 py-2 text-sm text-gray-700')
+                                                            }`
+                                                        }
+                                                        >
+                                                            <FontAwesomeIcon icon={'bookmark'} className='mr-2' />Save
+                                                        </Link>
+                                                    )}
+
+                                                </Menu.Item>
+
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link 
+                                                        to='/gigo6969'
+                                                        className={
+                                                            `${
+                                                                classNames(active
+                                                                ? 'bg-gray-100 text-gray-900 '
+                                                                : 'text-gray-700'
+                                                                ,'block px-4 py-2 text-sm text-gray-700')
+                                                            }`
+                                                        }
+                                                        >
+                                                            <FontAwesomeIcon icon={'gear'} className='mr-2' />Settings
+                                                        </Link>
+                                                    )}
+
+                                                </Menu.Item>
+
+                                                <div className="py-1">
+                                                <Menu.Item>
+                                                    {({ active }) => (
+                                                        <Link 
+                                                        to='/'
+                                                        className={
+                                                            `${
+                                                                classNames(active
+                                                                ? 'bg-gray-100 text-gray-900 '
+                                                                : 'text-gray-700'
+                                                                ,'block px-4 py-2 text-sm text-gray-700')
+                                                            }`
+                                                        }
+                                                        >Logout
+                                                        </Link>
+                                                    )}
+
+                                                </Menu.Item>
+                                                </div>
+                                            </Menu.Items>
+                                        </Transition>
+                                    </Menu>
+
                                 </li>
                             </ul>
                         </div>
