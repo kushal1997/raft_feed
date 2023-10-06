@@ -10,7 +10,7 @@ const ProfileHeader = ({setIsModalOpen}) => {
       <div className="grid grid-cols-3 mb-10">
         <div className="bg-green p-3 rounded flex items-start justify-center">
           <img
-            src="https://user-images.githubusercontent.com/522079/90506845-e8420580-e122-11ea-82ca-31087fc8486c.png"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
             alt="Profile Pic"
             className="rounded-full"
             width={150}

@@ -61,7 +61,7 @@ const Navbar = () => {
                                         <Menu.Button className='inline-block w-8 h-8 justify-center bg-white text-sm font-medium text-gray-700'>
                                             <img
                                                 className=' rounded-full w-6 w-ful'
-                                                src="https://user-images.githubusercontent.com/522079/90506845-e8420580-e122-11ea-82ca-31087fc8486c.png"
+                                                src="https://randomuser.me/api/portraits/men/32.jpg"
                                                 alt="" />
                                         </Menu.Button>
                                         <Transition
