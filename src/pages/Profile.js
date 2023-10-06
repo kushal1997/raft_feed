@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import ProfileHeader from '../cmponents/profile/ProfileHeader'
 import Highlights from '../cmponents/profile/Highlights'
+import ProfilePosts from '../cmponents/profile/ProfilePosts'
+import Footer from '../cmponents/Footer'
 
 const Profile = () => {
   return (
@@ -9,7 +11,9 @@ const Profile = () => {
         <main className="bg-slate-100">
             <ProfileHeader/>
             <Highlights/>
+            <ProfilePosts/>
         </main>
+        <Footer/>
     </div>
    </Fragment>
   )
