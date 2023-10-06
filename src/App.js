@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import { Fragment, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ModalSetting from './cmponents/modals/ModalSetting';
+import Login from './pages/Login';
 
 library.add(fas, far);
 function App() {
@@ -27,6 +28,12 @@ function App() {
           <>
             <Navbar />
             <Profile setIsModalOpen={setIsModalOpen}/>
+          </>
+        }
+        ></Route>
+        <Route path='/account/login' exact element={
+          <>
+            <Login/>
           </>
         }
         ></Route>
