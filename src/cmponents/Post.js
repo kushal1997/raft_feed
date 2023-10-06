@@ -1,10 +1,17 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import WebPhoto from "../assets/images/photo_web.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ModalPostActions from './modals/ModalPostActions';
+import ModalPost from './modals/ModalPost';
+
 
 const Post = () => {
+  const [isPModalAOpen,setIsPModalAOpen]=useState(false);
+  const [isPModal,setIsPModal]=useState(false);
   return (
     <Fragment>
+    <ModalPostActions isOpen={isPModalAOpen} setIsOpen={setIsPModalAOpen}/>
+    <ModalPost isOpen={isPModal} setIsOpen={setIsPModal}/>
       <div className="border rounded-lg border-slate-200 mb-5 bg-white">
         <div className="flex p-3 flex-row">
           <div className="flex-1">
@@ -19,6 +26,11 @@ const Post = () => {
               </span>
             </a>
           </div>
+          <div>
+            <a onClick={()=>setIsPModalAOpen(true)}>
+              <FontAwesomeIcon icon={'ellipsis'}/>
+            </a>
+          </div>
         </div>
         <img src={WebPhoto} alt="Photo of Web Developer" className="w-100" />
         <div className="p-3 flex flex-row text-2xl">
@@ -27,7 +39,10 @@ const Post = () => {
               <FontAwesomeIcon icon={'heart'} />
             </a>
 
-            <a href="" className="mr-3 hover:text-gray-500 cursor-pointer">
+            <a 
+            className="mr-3 hover:text-gray-500 cursor-pointer"
+            onClick={()=>setIsPModal(true)}
+            >
               <FontAwesomeIcon icon={['far', 'comment']} />
             </a>
 

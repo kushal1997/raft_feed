@@ -4,12 +4,12 @@ import Highlights from '../cmponents/profile/Highlights'
 import ProfilePosts from '../cmponents/profile/ProfilePosts'
 import Footer from '../cmponents/Footer'
 
-const Profile = () => {
+const Profile = ({setIsModalOpen}) => {
   return (
    <Fragment>
     <div className="container pt-8 max-w-5xl">
         <main className="bg-slate-100">
-            <ProfileHeader/>
+            <ProfileHeader setIsModalOpen={setIsModalOpen}/>
             <Highlights/>
             <ProfilePosts/>
         </main>

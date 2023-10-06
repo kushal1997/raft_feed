@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Fragment } from 'react'
 
-const ProfileHeader = () => {
+const ProfileHeader = ({setIsModalOpen}) => {
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
   return (
     <Fragment>
       <div className="grid grid-cols-3 mb-10">
@@ -21,7 +24,7 @@ const ProfileHeader = () => {
             <button className="bg-white ml-3 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded text-sm">
               Edit Profile
             </button>
-            <a href="" className="ml-3">
+            <a className="ml-3 cursor-pointer" onClick={handleModalOpen}>
               <FontAwesomeIcon icon={'gear'} className='text-2xl leading-6' />
             </a>
           </div>
