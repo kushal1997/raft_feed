@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom';
 
 const ProfileHeader = ({setIsModalOpen}) => {
   const handleModalOpen = () => {
@@ -22,7 +23,7 @@ const ProfileHeader = ({setIsModalOpen}) => {
               gigo6969
             </h1>
             <button className="bg-white ml-3 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded text-sm">
-              Edit Profile
+              <Link to='/accounts'>Edit Profile</Link>
             </button>
             <a className="ml-3 cursor-pointer" onClick={handleModalOpen}>
               <FontAwesomeIcon icon={'gear'} className='text-2xl leading-6' />

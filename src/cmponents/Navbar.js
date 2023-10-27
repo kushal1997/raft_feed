@@ -1,14 +1,35 @@
 import React, { Fragment } from 'react'
 import logo from "../assets/images/logo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Menu, Transition } from '@headlessui/react'
+import { useUserAuth } from '../context/UserAuth'
+import { ToastContainer, toast } from 'react-toastify'
 export const classNames=(...classes)=>{
     return classes.filter(Boolean).join(' ');
 }
 const Navbar = () => {
+    const {logOut}=useUserAuth();
+    const navigate =useNavigate();
+    const handleLogout = async () => {
+        try {
+            const storedToken = localStorage.getItem('authToken');
+            
+            if (storedToken) {
+                localStorage.removeItem('authToken');
+            }
+    
+            await logOut();
+            navigate('/');
+            toast.success("Logged Out Successfully");
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+    
     return (
         <Fragment>
+        <ToastContainer/>
             <nav className="sticky top-0 w-full border border-b-1 z-50 bg-white">
                 <div className="container max-w-5xl">
                     <div className="flex flex-row py-1 items-center">
@@ -135,18 +156,18 @@ const Navbar = () => {
                                                 <div className="py-1">
                                                 <Menu.Item>
                                                     {({ active }) => (
-                                                        <Link 
-                                                        to='/'
+                                                        <p
+                                                        onClick={handleLogout}
                                                         className={
                                                             `${
                                                                 classNames(active
                                                                 ? 'bg-gray-100 text-gray-900 '
                                                                 : 'text-gray-700'
-                                                                ,'block px-4 py-2 text-sm text-gray-700')
+                                                                ,'block px-4 py-2 text-sm text-gray-700 cursor-pointer')
                                                             }`
                                                         }
                                                         >Logout
-                                                        </Link>
+                                                        </p>
                                                     )}
 
                                                 </Menu.Item>
